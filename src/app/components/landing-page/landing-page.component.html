@@ -1,0 +1,22 @@
+<mat-grid-list cols="5" rowHeight="110px">
+	<mat-grid-tile id="landing-grid" colspan="1" rowspan="5">
+		<mat-list role="list">
+			<div id="header">
+				<img [src]="profilePicUrl" alt="Avatar" style="width:150px">
+        <p>{{ headName }}</p>
+      </div>
+      <mat-list-item role="listitem" *ngFor="let menu of menuList" [routerLink]="menu.routerLink">
+        <i class="material-icons">{{ menu.iconName }}</i>&nbsp;&nbsp;&nbsp;{{ menu.menuName }}
+      </mat-list-item>
+      <div id="divider">
+        <mat-list-item id="footer" role="listitem"><i class="fa fa-facebook"></i></mat-list-item>  
+        <mat-list-item id="footer" role="listitem"><i class="fa fa-linkedin"></i></mat-list-item>
+        <mat-list-item id="footer" role="listitem"><i class="fa fa-instagram"></i></mat-list-item>
+        <mat-list-item id="footer" role="listitem"><i class="fa fa-skype"></i></mat-list-item>
+      </div>
+		</mat-list>
+	</mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="5">
+    <router-outlet></router-outlet>
+  </mat-grid-tile>
+</mat-grid-list>
